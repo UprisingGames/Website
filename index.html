@@ -1,0 +1,258 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Website</title>
+  <meta name="description" content="This is where we post the buidls for the uprising games website">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Website</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">This is where we post the buidls for the uprising games website</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/UprisingGames/Website/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/UprisingGames/Website/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/UprisingGames/Website" class="code">View Website on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h3>
+<a id="uprising-games" class="anchor" href="#uprising-games" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Uprising Games</h3>
+
+<p>Uprising Games is a two-man  development team that creates the best games since the olympics. </p>
+
+<h3>
+<a id="amazing-games" class="anchor" href="#amazing-games" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Amazing Games</h3>
+
+<p>We hand code all of our games and programs manually on computers for just about anything. Some of our projects include, Billy and the Temple of the Illuminati puzzle game and our new two player battle game Project Spartan.</p>
+
+<h3>
+<a id="hand-coded--free" class="anchor" href="#hand-coded--free" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hand Coded &amp; Free</h3>
+
+<p>We don't code with tons of employees or bots coding for us, every line of code is made by us, for all of us. They are all free on PC, Android and iOS with an optional $0.99 iAP to donate</p>
+
+<h3>
+<a id="coders" class="anchor" href="#coders" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Coders</h3>
+
+<p>Our coding team consists of Jacob, who works on most of the projects, and Kailin, who works on the website</p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Visit our GitHub page or click the download button to download the working version of BATI. You can find our GitHub page by going to @UprisngGames on Github. Find a bug? Create an issue on the topic and we will be sure to get in contact and hopefully fix it within a few days.</p>
+
+<h3>
+<a id="play-bati-here" class="anchor" href="#play-bati-here" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Play BATI Here</h3>
+
+<p>`//Billy and The Temple of the Illuminati
+//Copyright 2015, this code may not be replublished or used without the concent of Uprising Games
+frameRate(60);</p>
+
+<p>//Basic Goal of game is to reach the black square(Goal) while navigating through mazes and avoiding traps
+//Controls are arrow keys</p>
+
+<p>//START CODE
+//Basic Variables
+var billyY=200;
+var billyX=200;
+var direction = 1;
+var stage = 1;</p>
+
+<p>//functions
+var DrawBilly = function() {
+    //Head
+    fill(255, 243, 194);
+    ellipse(billyX,billyY,25,15);
+    fill(66, 42, 0);
+    arc(billyX,billyY,25,15,-180,0);
+    //Body
+    fill(255, 243, 194);
+    rect(billyX-20,billyY+15,40,5);
+    fill(66, 42, 0);
+    noStroke();
+    rect(billyX-5,billyY+7,10,25);
+    rect(billyX-15,billyY+15,30,5);
+    strokeWeight(10);
+    //Pants
+    fill(163, 119, 6);
+    rect(billyX-5,billyY+32,4,20);
+    rect(billyX+1,billyY+32,4,20);
+    //shoes
+    fill(54, 41, 0);
+    rect(billyX-6,billyY+48,6,6);
+    rect(billyX+1,billyY+48,6,6);
+    //backpack
+    fill(153, 125, 15);
+    ellipse(billyX,billyY+20,10,20);
+};</p>
+
+<p>//Lava WILL CURRENTLY BREAK GAME ENABLE AT OWN RISK
+var Lava = function(x,y,w,l,enabled) {
+    if (enabled === 1) {
+    if (stage&gt;1) {
+    fill(255, 0, 0);
+    rect(x,y,w,l);
+    if (billyX&gt;x &amp;&amp; billyXy &amp;&amp; billyY&lt;y+l) {
+        stage = 316;
+    }
+    }
+    }</p>
+
+<p>};</p>
+
+<p>var Goal = function(minX,minY,maxX,maxY) {
+    //Goal
+    fill(0, 0, 0);
+    rect(minX,minY,maxX-minX,maxY-minY);
+    if  (billyX &gt; minX &amp;&amp; billyY &gt; minY &amp;&amp; billyX &lt; maxX &amp;&amp; billyY&lt; maxY) {
+        stage = stage + 1;
+    }
+};
+//Scenes
+//Title
+var draw = function() {
+    if (stage === 1) {
+        background(0, 196, 255);
+        fill(0, 0, 0);
+        textFont('Arial',15);
+        text('Billy &amp; The Temple of the Illuminati',100,100);
+        fill(255, 242, 0);
+        triangle(200,120,300,300,100,300);
+        fill(0, 0, 0);
+        ellipse(200,240,70,50);
+        fill(255, 0, 0);
+        ellipse(200,240,35,25);
+        fill(30, 77, 2);
+        rect(50,325,300,50);
+        fill(255, 255, 255);
+        text('Click here to start',140,356);
+        text('Version 1.4 BETA',10,15);
+        if (mouseX&gt;50 &amp;&amp; mouseX300) {
+            fill(255, 0, 0);
+            rect(50,325,300,50);
+            fill(255, 255, 255);
+            text('Click here to start',140,356);
+        }</p>
+
+<pre><code>    mouseClicked = function() {
+        if (mouseX&gt;50 &amp;&amp; mouseX&lt;350 &amp;&amp; mouseY&lt;375 &amp;&amp; mouseY&gt;300 &amp;&amp; stage===1) {
+        stage +=1;
+        }
+    };
+
+}
+
+if (stage === 2) {
+background(255, 191, 0);
+DrawBilly();
+
+//Health Meter
+var Health = 200;
+fill(255, 0, 0);
+strokeWeight(3);
+stroke(0, 0, 0);
+rect(350,230,15,160,90);
+//BETA Attacking Mechanism
+//Attack Meter
+var Mana = 200;
+fill(0, 255, 9);
+rect(375,230,15,160,90);
+if (mouseIsPressed) {
+var UserAttackX = billyX;
+var UserAttackY = billyY -40;
+fill(255, 234, 0);
+ellipse(UserAttackX,UserAttackY,40,60);
+}
+noStroke();
+//Goal
+Goal(360,0,400,40);
+//Moving
+if (keyIsPressed &amp;&amp; keyCode === DOWN) {
+    billyY += 5;
+} else if (keyIsPressed &amp;&amp; keyCode === UP) {
+    billyY -= 5;
+} else if (keyIsPressed &amp;&amp; keyCode === LEFT) {
+    billyX -= 5;
+} else if (keyIsPressed &amp;&amp; keyCode === RIGHT) {
+    billyX += 5;
+}
+
+
+//Collision Detection with OUTSIDE BARRIER
+if (billyX &gt; 380) {
+    billyX -=12;
+} else if (billyX &lt; 20) {
+    billyX +=12;
+} else if (billyY &gt; 380) {
+    billyY -=12;
+} else if (billyY &lt; 20) {
+    billyY+=12;
+}
+}
+Lava(300,100,100,300,0);
+
+
+if (stage === 3) {
+    background(0, 0, 0);
+    fill(255, 255, 255);
+    textSize(10);
+    text('COMMING SOON: Check out my BitBucket for HTML Builds and an HD Version',20,20);
+    text('More levels comming soon, but not untill basic',70,200);
+    text('Mechanics for the game are finished. Check back',70,220);
+    text('soon to see if the game is updated.',70,240);
+    text('To play again click here',230,310);
+    fill(255, 255, 255);
+    strokeWeight(10);
+    rect(360,320,10,50);
+    triangle(340,370,390,370,365,400);
+}
+
+if (stage === 316) {
+    background(0, 0, 0);
+    text('You died. Press restart to try again',100,100);
+}
+};`
+</code></pre>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/UprisingGames" class="avatar"><img src="https://avatars3.githubusercontent.com/u/17301571?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/UprisingGames">UprisingGames</a> maintains <a href="https://github.com/UprisingGames/Website">Website</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/UprisingGames/Website/tarball/master" class="tar">tar</a><a href="https://github.com/UprisingGames/Website/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
